@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'staticpages',
-    'lettuce.django'
+    'lettuce.django',
 )
 
 MIDDLEWARE_CLASSES = (
