@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load bootstrap_toolkit %}
+<html lang="es">
+    <head>
+        <title>Aplicación Django Static Pages</title>
+        {% bootstrap_stylesheet_tag %}
+        {% bootstrap_stylesheet_tag "responsive" %}
+        <link rel="stylesheet" href="/static/style.css" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        {% bootstrap_javascript_tag %}
+        {% block extra_head %}{% endblock %}
+    </head>
+    <body>
+        <header class="navbar navbar-fixed-top navbar-inverse">
+            <div class="navbar-inner">
+              <div class="container">
+                <a href="/" id="logo">Sample app</a>
+                <nav>
+                  <ul class="nav pull-right">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/help">Help</a></li>
+                    <li><a href="#">Sign in</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+        </header>
+        <div class="container">
+            {% block contenido %}{% endblock %}
+            <footer class="footer">
+                <nav>
+                  <ul>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                  </ul>
+                </nav>
+            </footer>
+        </div>
+    </body>
+</html>

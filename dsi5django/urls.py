@@ -1,11 +1,14 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+from django.conf import settings
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'dsi5django.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
-    # url(r'^admin/', include(admin.site.urls)),
-    url(r'^staticpages/', include('staticpages.urls')),
+    url(r'^$', include('staticpages.urls')),
+	url(r'^staticpages/', include('staticpages.urls')),
+	url(r'^home/$', 'staticpages.views.home'),
+	url(r'^help/$', 'staticpages.views.help'),
+	url(r'^about/$', 'staticpages.views.about'),
 )
+
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+urlpatterns += staticfiles_urlpatterns()
